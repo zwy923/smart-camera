@@ -33,7 +33,7 @@ def capture_video(source, model):
         if prev_frame is not None:
             diff = cv2.absdiff(current_frame, prev_frame)
             if is_significant_diff(diff):
-                save_and_recognize(frame, model)  # 使用原始帧以保留更多细节
+                save_and_recognize(frame, model)
 
         prev_frame = current_frame
 
@@ -55,7 +55,7 @@ def main():
     if model is None:
         return
 
-    source = 0  # 默认使用电脑内置摄像头
+    source = 0
     capture_video(source, model)
 
 if __name__ == "__main__":
